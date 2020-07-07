@@ -49,8 +49,14 @@ func Prepare(addr string, p *netflow9.Packet) []utl.Metric{
 						case strings.ToLower("sourceIPv4Address"):
 							met.SrcIP = fmt.Sprintf("%v", f.Translated.Value)
 
+						case strings.ToLower("sourceIPv6Address"):
+							met.SrcIP = fmt.Sprintf("%v", f.Translated.Value)	
+
 						case strings.ToLower("destinationIPv4Address"):
 							met.DstIP = fmt.Sprintf("%v", f.Translated.Value)
+
+						case strings.ToLower("destinationIPv6Address"):
+							met.DstIP = fmt.Sprintf("%v", f.Translated.Value)	
 
 						case strings.ToLower("protocolIdentifier"):
 							met.Protocol = fmt.Sprintf("%v", f.Translated.Value)
